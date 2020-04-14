@@ -18,6 +18,6 @@ ENTRYPOINT [ "tfsec" ]
 # as we specified an entrytrypoint, this is appended as an argument (i.e., `tfsec --help`)
 CMD [ "--help" ]
 
-FROM hashicorp/terraform:0.12.9
+FROM hashicorp/terraform:0.12.24
 
 COPY --from=builder /go/bin/tfsec /bin/tfsec
