@@ -1,23 +1,8 @@
-# pinned version of the Alpine-tagged 'go' image
-FROM golang:1.13-alpine AS builder
+ARG TF_VERSION=0.12.24
+ARG TFSEC_VERSION=v0.25.0
 
-# grab tfsec from GitHub (taken from README.md)
-RUN env GO111MODULE=on go get -u github.com/liamg/tfsec/cmd/tfsec \
-      && mkdir /workdir \
-      && chown -R nobody /workdir
+FROM liamg/tfsec:${TFSEC_VERSION} AS base
 
-# use a non-privileged user
-USER nobody
+FROM hashicorp/terraform:${TF_VERSION}
 
-# work somewhere where we can write
-WORKDIR /workdir
-
-# set the default entrypoint -- when this container is run, use this command
-ENTRYPOINT [ "tfsec" ]
-
-# as we specified an entrytrypoint, this is appended as an argument (i.e., `tfsec --help`)
-CMD [ "--help" ]
-
-FROM hashicorp/terraform:0.12.24
-
-COPY --from=builder /go/bin/tfsec /bin/tfsec
+COPY --from=base /usr/bin/tfsec /bin/tfsec
