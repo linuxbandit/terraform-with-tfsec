@@ -1,10 +1,12 @@
 # Terraform and Tfsec
 
-Utility to have both in the same container. For use with [CI templates](https://github.com/jobtome-labs/ci-templates/).
+Utility to have both in the same container. For use with [CI templates](https://github.com/jobtome-labs/ci-templates/), hence it contains `bash`.
 
 `tfsec` is a project by liamg, see [here](https://github.com/liamg/tfsec)
 
-The tag of this repo refers to the **terraform version**.
+The tag of this repo refers to the **terraform version**. 
+
+Note: in order to keep backwards compatibility with the already-published tag `0.12.24`, the bash variant will be tagged `0.12.24-bash`. From next version onwards, the tag will be again only the tf version.
 
 ### Versions
 |||
