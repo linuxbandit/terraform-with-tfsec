@@ -2,7 +2,7 @@
 
 Utility to have both in the same container. For use with [CI templates](https://github.com/jobtome-labs/ci-templates/), hence it contains `bash`.
 
-`tfsec` is a project by liamg, see [here](https://github.com/liamg/tfsec)
+`tfsec` is a project by liamg (now aquasec), see [here](https://github.com/aquasec/tfsec)
 
 The tag of this repo refers to the **terraform version**. 
 
@@ -11,7 +11,7 @@ Note: in order to keep backwards compatibility with the already-published tag `0
 ### Versions
 |||
 |-|-|
-| terraform | 0.12.24 |
+| terraform | 0.12.29 |
 | tfsec | v0.25.0 |
 
 To override these default versions:
