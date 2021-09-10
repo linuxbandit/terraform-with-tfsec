@@ -11,9 +11,9 @@ Note: in order to keep backwards compatibility with the already-published tag `0
 ### Versions
 |||
 |-|-|
-| terraform | 0.12.29 |
+| terraform | 1.0.0 |
 | tfsec | v0.25.0 |
 
 To override these default versions:
 
-`docker build -t linuxbandit/terraform-with-tfsec --build-arg TF_VERSION=0.12.34 --build-arg TFSEC_VERSION=v0.34.56 .`
+`docker build -t linuxbandit/terraform-with-tfsec --build-arg TF_VERSION=1.23.45 --build-arg TFSEC_VERSION=v0.34.56 .`
